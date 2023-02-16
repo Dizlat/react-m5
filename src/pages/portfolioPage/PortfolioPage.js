@@ -7,7 +7,7 @@ export default function PortfolioPage(props) {
 
     const [ photos, setPhotos ] = useState([])
     const [ update, setUpdate ] = useState(false)
-    const [ photo, setPhoto ] = useState({})
+
 
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/photos')
@@ -15,12 +15,6 @@ export default function PortfolioPage(props) {
             .then(photos => setPhotos(photos))
     }, [ update ])
 
-
-    const getPhotoId = (id) => {
-        fetch(`https://jsonplaceholder.typicode.com/photos/${id}`)
-            .then(res => res.json())
-            .then(photo => setPhoto(photo))
-    }
 
 
     return (
@@ -35,14 +29,14 @@ export default function PortfolioPage(props) {
                     <div >
                         <img src={photo.url} alt='' style={{width: '200px'}}/>
                         <p>{photo.title}</p>
-                        <button onClick={() => getPhotoId(photo.id)}>Узнать url фото</button>
+                        <button>Узнать url фото</button>
                         <p>---------------------------------------</p>
 
                     </div>)}
 
                 </div>
                 <h2>
-                    url фото: {photo.url}
+                    url фото:
                 </h2>
             </div>
             
