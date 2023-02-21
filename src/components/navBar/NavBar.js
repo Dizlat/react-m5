@@ -14,6 +14,9 @@ export default function NavBar() {
             <li style={{marginRight: "15px"}}>
                 <NavLink to="/port" className={({isActive}) => isActive && "active"}>Portfolio page</NavLink>
             </li>
+            <li style={{marginRight: "15px"}}>
+                <NavLink to="/new" className={({isActive}) => isActive && "active"}>New page</NavLink>
+            </li>
         </ul>
     )
 }
